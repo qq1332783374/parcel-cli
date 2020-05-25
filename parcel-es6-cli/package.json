@@ -4,7 +4,7 @@
   "description": "parcel-es6-cli",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel ./index.html --no-cache -p 8088 --open",
+    "dev": "parcel server ./index.html --no-cache -p 8088 --open",
     "build": "parcel build ./index.html --public-url ./ --no-cache  --no-source-maps --no-cache --detailed-report",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
