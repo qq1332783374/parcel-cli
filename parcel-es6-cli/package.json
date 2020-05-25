@@ -1,0 +1,21 @@
+{
+  "name": "parcel-es6-cli",
+  "version": "1.0.0",
+  "description": "parcel-es6-cli",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel ./index.html --no-cache -p 8088 --open",
+    "build": "parcel build ./index.html --public-url ./ --no-cache  --no-source-maps --no-cache --detailed-report",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "parcel",
+    "es6"
+  ],
+  "author": "谭上彪",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-polyfill": "^6.26.0",
+    "parcel-bundler": "^1.12.4"
+  }
+}
