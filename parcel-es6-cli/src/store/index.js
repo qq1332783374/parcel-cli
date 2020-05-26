@@ -1,7 +1,7 @@
 /*
  * @Author: 谭上彪
  * @Date: 2020-05-25 17:05:52
- * @LastEditTime: 2020-05-25 18:18:45
+ * @LastEditTime: 2020-05-26 15:59:51
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \parcel-es6-cli\src\store\index.js
@@ -24,6 +24,23 @@ export default class Store {
      * 回调行数
      */
     if (callback) callback()
+  }
+
+  remove (query, callback) {
+    let k
+
+		const items = this.getLocalStorage().filter(item => {
+			for (k in query) {
+				if (query[k] !== item[k]) {
+					return true
+				}
+			}
+			return false
+		})
+
+		this.setLocalStorage(items)
+
+		if (callback) callback(items)
   }
 
   find (query, callback) {

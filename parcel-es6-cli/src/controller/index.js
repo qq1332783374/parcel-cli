@@ -1,7 +1,7 @@
 /*
  * @Author: 谭上彪
  * @Date: 2020-05-25 16:29:13
- * @LastEditTime: 2020-05-25 18:15:43
+ * @LastEditTime: 2020-05-26 09:51:05
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \parcel-es6-cli\src\controller\index.js
@@ -12,6 +12,14 @@ export default class Controller {
     this.store = store
 
     view.bindSetVal(this.addLocalVal.bind(this))
+    view.bindRemoveItem(this.removeItem.bind(this))
+  }
+
+  removeItem (id) {
+    this.store.remove({id}, () => {
+      this._show()
+      this.view.removeItem(id)
+    })
   }
 
   /**
